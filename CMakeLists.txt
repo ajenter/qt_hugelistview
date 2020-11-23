@@ -4,7 +4,7 @@ project(hugelistview)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 COMPONENTS Core Widgets CONFIG REQUIRED)
+find_package(Qt5 COMPONENTS Core Widgets CONFIG REQUIRED)
 
 file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR} CONFIGURE_DEPENDS "src/*.h" "src/*.cpp")
 

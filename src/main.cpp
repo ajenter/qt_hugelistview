@@ -61,31 +61,21 @@ int main(int argc, char* argv[])
 	Model model;
 
 	QTableView table;
-	//listWidget.setLayoutMode(QListView::Batched);
-	//listWidget.setBatchSize(10);
 	table.resize(600, 800);
 	table.setSelectionBehavior(QAbstractItemView::SelectRows);
 	table.horizontalHeader()->setStretchLastSection(true);
 	table.setItemDelegateForColumn(0, new CustomDelegate(&table));
 	table.horizontalHeader()->hide();
 	table.verticalHeader()->hide();
-	//table.verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 	table.setModel(&model);
 	table.setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
 	table.show();
 
 	updateRowHeights(table);
 
-	//for (int i = 0; i < 100; ++i)
-	//table.resizeRowToContents(i);
-
-	table.connect(table.verticalScrollBar(), &QScrollBar::valueChanged, [&table](int newValue) {
-		//qDebug() << "valueChanged: " << newValue;
+	table.connect(table.verticalScrollBar(), &QScrollBar::valueChanged, [&table](int) {
 		updateRowHeights(table);
 	});
-
-	// NOTE: it takes several seconds this the list is loaded!!!
-	// debug logs show that sizeHint for ALL items is requested upon startup
 
 	return app.exec();
 }
