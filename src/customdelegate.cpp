@@ -6,7 +6,7 @@
 
 CustomDelegate::CustomDelegate(QObject* parent)
     : QItemDelegate(parent),
-      _cachedItemHeights(1000) // make cache large enough to hold all items
+      _cachedItemHeights(1000) 
 {
 }
 
