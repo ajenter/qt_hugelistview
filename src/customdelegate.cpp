@@ -32,8 +32,7 @@ QSize CustomDelegate::sizeHint(const QStyleOptionViewItem&, const QModelIndex& i
 	}
 
 	// make height depend somehow on index to emulate items with various heights
-	int itemHeight = 1;
-	//for (int i = 0; i < 10000; ++i)
+	int itemHeight = 1;	
 	itemHeight = int((itemHeight % 5) + 20 * (1 + (rand() % 100) / 10.0));
 	qDebug() << "  calculating item height for index #" << index.row() << ", itemHeight = " << itemHeight;
 
